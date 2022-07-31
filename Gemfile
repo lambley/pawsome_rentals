@@ -80,3 +80,6 @@ end
 
 # dotenv gemfile
 gem "dotenv-rails", groups: [:development, :test]
+
+# cloudinary gem
+gem "cloudinary"
