@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
-require 'date'
 
 # seed for users
 
@@ -26,14 +25,14 @@ puts "You have created #{User.count} users.."
 
 36.times do
   Costume.create!(
-    name: Faker::Name.name,
+    name: Faker::Lorem.paragraph,
     description: "lorem ipsum",
     animal_type: %w[dog cat].sample,
     user_id: 1
   )
 end
 
-puts "You have know #{Costume.count} costumes to rent.."
+puts "Generated #{Costume.count} costumes"
 
 # seed for bookings
 
@@ -41,9 +40,9 @@ puts "You have know #{Costume.count} costumes to rent.."
   Booking.create!(
     user_id: User.ids.sample,
     costume_id: Costume.ids.sample,
-    date_start: Date.new(2022, 7, 31),
-    date_end: Date.new(2022, 8, 1)
+    date_start: Faker::Time.backward(days: 14, period: :evening),
+    date_end: Faker::Time.forward(days: 23, period: :morning)
   )
 end
 
-puts "Start preparing to ship your costumes. You have now #{Booking.count} reservations."
+puts "Generated #{Booking.count} bookings"
