@@ -11,7 +11,7 @@ puts "Seeding Users"
   )
 end
 
-puts "You have created #{User.count} users.."
+puts "> Generated #{User.count} users"
 
 puts "Seeding Costumes"
 36.times do
@@ -23,7 +23,7 @@ puts "Seeding Costumes"
   )
 end
 
-puts "Generated #{Costume.count} costumes"
+puts "> Generated #{Costume.count} costumes"
 
 puts "Seeing Bookings"
 
@@ -37,4 +37,4 @@ puts "Seeing Bookings"
   )
 end
 
-puts "Generated #{Booking.count} bookings"
+puts "> Generated #{Booking.count} bookings"
