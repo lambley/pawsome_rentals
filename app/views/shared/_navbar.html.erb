@@ -1,36 +1,24 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "image.jpg" %>
+<nav class="nav">
+  <div class=" nav navbar-left">
+    <%= link_to "/" do %>
+      <i class="fa-solid fa-paw"></i>
     <% end %>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag "image.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
+    <h2>Pawsome Rentals</h2>
   </div>
-</div>
+  <div class="nav navbar-middle">
+    <h4>Browse <i class="fa-solid fa-chevron-down"></i></h4>
+    <h4>About</h4>
+    <h4>Contact <i class="fa-solid fa-comments"></i></h4>
+  </div>
+  <div class="nav navbar-right">
+    <% if user_signed_in? %>
+      <h4>Hello, <%= current_user.first_name.capitalize %></h4>
+      <div class="avatar">
+        <i class="fa-solid fa-user"></i>
+      </div>
+      <%= link_to "log out", destroy_user_session_path, method: :delete, class: "login-button logout" %>
+    <% else %>
+      <%= link_to "login", new_user_session_path, class: "login-button" %>
+    <% end %>
+  </div>
+</nav>
