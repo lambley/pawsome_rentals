@@ -1,5 +1,10 @@
 .banner {
-  background: image-url('banner.jpg');
+  background-image: image-url('banner.jpg');
+  background-size: cover;
+  border-bottom: 4px solid #90AACB;
+  height: 700px;
+  ;
+  width: 100%;
   h1 {
     text-align: center;
   }
