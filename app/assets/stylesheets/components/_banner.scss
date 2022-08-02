@@ -1,4 +1,5 @@
 .banner {
+  padding-top: 100px;
   background-image: image-url('banner.jpg');
   background-size: cover;
   border-bottom: 4px solid #90AACB;
@@ -22,6 +23,10 @@
     width: 75%;
     margin-left: auto;
     margin-right: auto;
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+      box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+    }
   }
   .mock-input {
     padding: 4px 16px;

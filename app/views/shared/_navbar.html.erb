@@ -1,14 +1,20 @@
-<nav class="nav">
-  <div class=" nav navbar-left col-3 sticky-top">
+<nav class="nav sticky">
+  <div class=" nav navbar-left col-3">
     <%= link_to "/" do %>
       <i class="fa-solid fa-paw"></i>
     <% end %>
     <h2>Pawsome Rentals</h2>
   </div>
   <div class="nav navbar-middle col-6">
-    <h4>Browse <i class="fa-solid fa-chevron-down"></i></h4>
-    <h4>About</h4>
-    <h4>Contact <i class="fa-solid fa-comments"></i></h4>
+    <%= link_to '#' do %>
+      <h4>Browse <i class="fa-solid fa-chevron-down"></i></h4>
+    <% end %>
+    <%= link_to '#' do %>
+      <h4>About</h4>
+    <% end %>
+    <%= link_to '#' do %>
+      <h4>Contact <i class="fa-solid fa-comments"></i></h4>
+    <% end %>
   </div>
   <div class="nav navbar-right col-3">
     <% if user_signed_in? %>
