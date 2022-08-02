@@ -1,1 +1,12 @@
-<h1>This is my index page</h1>
+<div class="container">
+  <h1>Costumes</h1>
+
+  <div class="d-flex justify-content-evenly flex-wrap">
+    <% @costumes.each do |costume|%>
+      <p>
+      <%= link_to costume.name, costume_path(costume) %>
+        <%= costume.name%>
+      </p>
+    <% end %>
+  </div>
+</div>
