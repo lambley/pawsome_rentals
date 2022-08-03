@@ -1,8 +1,19 @@
-<div class="card-product">
-  <img src="https://hips.hearstapps.com/clv.h-cdn.co/assets/17/28/1499868023-pet-costume5.jpg?crop=0.998xw:0.666xh;0.00173xw,0.317xh&resize=480:*">
-  <div class="card-product-infos">
-    <h1><%= @costume.name%></h1>
-    <h2><%= @costume.animal_type %></h2>
-    <p><%= @costume.description%></p>
+<main class="card-product">
+  <div class="left-column">
+    <img src="https://images.unsplash.com/photo-1583336663277-620dc1996580?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZG9nJTIwY2xvdGhlc3xlbnwwfHwwfHw%3D&w=1000&q=80">
   </div>
-</div>
+
+  <div class="right-column">
+    <div class="product-description">
+      <h1><%= @costume.name%></h1>
+      <h2><%= @costume.animal_type %></h2>
+      <p><%= @costume.description%></p>
+   </div>
+
+
+    <div class="product-price">
+      <span>£45</span>
+      <a href="#" class="cart-btn">Add to checkout</a>
+    </div>
+  </div>
+</main>
