@@ -1,6 +1,9 @@
 require 'faker'
+require 'open-uri'
 
-
+puts "resetting database"
+User.destroy_all
+Costume.destroy_all
 
 
 puts "Seeding Users"
@@ -15,28 +18,30 @@ end
 
 puts "> Generated #{User.count} users"
 
-# puts "Seeding Costumes"
+puts "Seeding Costumes"
 
-require 'open-uri'
-file = URI.open("https://unsplash.com/photos/7-ToFEHzMNw")
-
-costume = Costume.new(name: Faker::Company.profession, description: Faker::Lorem.paragraph, animal_type: %w[dog cat].sample, user_id: 1)
-costume.photo.attach(io: file, filename: "boxer-superdog", content_type: "image/jpg")
-costume.save!
-
+36.times do
+  c = Costume.create!(
+    name: Faker::Name.name,
+    description: Faker::Lorem.paragraph,
+    animal_type: %w[dog cat].sample,
+    user_id: 1
+  )
+  c.photo.attach(io: URI.open('https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1659642713/l2xononnlbfimakzuo7i.jpg'), filename: 'image.jpg')
+end
 
 puts "> Generated #{Costume.count} costumes"
 
-# puts "Seeing Bookings"
+puts "Seeing Bookings"
 
-# 12.times do
-#   date_start = Faker::Time.forward(days: rand(1..30))
-#   Booking.create!(
-#     user_id: User.ids.sample,
-#     costume_id: Costume.ids.sample,
-#     date_start:,
-#     date_end: date_start + rand(1..30).day
-#   )
-# end
+12.times do
+  date_start = Faker::Time.forward(days: rand(1..30))
+  Booking.create!(
+    user_id: User.ids.sample,
+    costume_id: Costume.ids.sample,
+    date_start:,
+    date_end: date_start + rand(1..30).day
+  )
+end
 
-# puts "> Generated #{Booking.count} bookings"
+puts "> Generated #{Booking.count} bookings"

@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container page-top">
   <h1>Costumes</h1>
 
-  <div class="row">
-    <% @costumes.each do |costume| %>
-      <%= render 'shared/card', costume: costume%>
-    <% end %>
+  <div class="row ">
+    <div class="col-3 p-3">
+      <% @costumes.each do |costume| %>
+        <%= render 'shared/card', costume: costume%>
+      <% end %>
+    </div>
   </div>
-
-
 </div>
