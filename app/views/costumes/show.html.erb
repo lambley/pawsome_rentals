@@ -1,1 +1,19 @@
-<h1><%= @costume.name%></h1>
+<main class="card-product">
+  <div class="left-column">
+    <img src="https://images.unsplash.com/photo-1583336663277-620dc1996580?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZG9nJTIwY2xvdGhlc3xlbnwwfHwwfHw%3D&w=1000&q=80">
+  </div>
+
+  <div class="right-column">
+    <div class="product-description">
+      <h1><%= @costume.name%></h1>
+      <h2><%= @costume.animal_type %></h2>
+      <p><%= @costume.description%></p>
+   </div>
+
+
+    <div class="product-price">
+      <span>£45</span>
+      <a href="#" class="cart-btn">Add to checkout</a>
+    </div>
+  </div>
+</main>
