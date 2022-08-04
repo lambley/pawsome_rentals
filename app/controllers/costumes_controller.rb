@@ -6,4 +6,11 @@ class CostumesController < ApplicationController
   def show
     @costume = Costume.find(params[:id])
   end
+
+  def edit
+    @costume = Costume.find(params[:id])
+  end
+
+  
+
 end
