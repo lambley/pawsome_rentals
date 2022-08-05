@@ -1,4 +1,13 @@
-<%= cl_image_tag("l2xononnlbfimakzuo7i",
-    width: 400, height: 300, crop: :fill) %>
+<div class="product-card">
+  <%= cl_image_tag("l2xononnlbfimakzuo7i",
+      width: 400, height: 300, crop: :fill) %>
 
-<p><%= costume.name %></p>
+  <div class="product-name">
+    <p><%= costume.name %></p>
+
+    <div class="product-name-and-avatar">
+      <p class="avatar">user name</p>
+      <p><%= rand(10) %> £/day</p>
+    </div>
+  </div>
+</div>

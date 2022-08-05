@@ -1,11 +1,9 @@
-<div class="cpage-top">
+<div class="page-top">
   <h1>Costumes</h1>
 
-  <div class="ostumes-card-container">
-    <div class="">
-      <% @costumes.each do |costume| %>
-        <%= render 'shared/card', costume: costume%>
-      <% end %>
-    </div>
+  <div class="costumes-card-container">
+    <% @costumes.each do |costume| %>
+      <%= render 'shared/card', costume: costume%>
+    <% end %>
   </div>
 </div>
