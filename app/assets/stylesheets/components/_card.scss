@@ -4,13 +4,12 @@
 }
 .product-card {
   padding: 4px 4px;
-
 }
 
 .costumes-card-container {
-  display: flex;
-  justify-content: left;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  order: 4;
   margin: 16px 0;
   padding: 0 8px;
 }
