@@ -21,7 +21,7 @@ class CostumesController < ApplicationController
   def create
     @costume = Costume.new(costume_params)
     @costume.save
-    redirect_to costume_path(@costume)
+    redirect_to costumes_path(@costume)
   end
 
   # def edit
