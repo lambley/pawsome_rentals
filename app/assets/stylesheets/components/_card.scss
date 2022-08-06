@@ -3,11 +3,22 @@
   padding-bottom: 8px;
 }
 
+.index-container {
+  display: flex;
+  h1 {
+    padding-top: 100px;
+    text-align: center;
+  }
+}
+
 .costumes-card-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  padding: 0 8px;
+  padding: 100px;
+  width: 70%;
+  transform: translate(430px, 10px);
+  position: absolute;
 }
 
 .product-name {
@@ -26,6 +37,7 @@
 
   img {
     position: relative;
+    z-index: -2;
   }
 }
 
