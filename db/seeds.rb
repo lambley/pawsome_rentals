@@ -1,4 +1,10 @@
 require 'faker'
+require 'open-uri'
+
+puts "resetting database"
+User.destroy_all
+Costume.destroy_all
+
 
 puts "Seeding Users"
 12.times do
@@ -7,18 +13,18 @@ puts "Seeding Users"
     last_name: Faker::Name.last_name,
     email: Faker::Internet.email,
     password: '123456'
-
   )
 end
 
 puts "> Generated #{User.count} users"
 
 puts "Seeding Costumes"
+
 36.times do
   longitude = rand(51.500..51.599).round(3)
   latitude = rand(-0.25..0.25).round(3)
   address = Geocoder.search([longitude, latitude])
-  Costume.create!(
+  c = Costume.create!(
     name: Faker::Company.profession,
     description: Faker::Lorem.paragraph,
     animal_type: %w[dog cat].sample,
@@ -29,6 +35,7 @@ puts "Seeding Costumes"
     city: address.first.city,
     user_id: rand(1..3)
   )
+  c.photo.attach(io: URI.open('https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1659642713/l2xononnlbfimakzuo7i.jpg'), filename: 'image.jpg')
 end
 
 puts "> Generated #{Costume.count} costumes"

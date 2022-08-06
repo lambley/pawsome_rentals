@@ -4,6 +4,12 @@ class CostumesController < ApplicationController
   end
 
   def show
-    @costume = Costume.find(params[:id])
+    @costume = Costume.find(costume_params)
+  end
+
+  private
+
+  def costume_params
+    params.require(:costume).permit(:name, :description, :photo)
   end
 end
