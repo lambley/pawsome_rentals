@@ -1,17 +1,17 @@
-<div class="new-costume" style="padding-top: 100px">
   <%= form_for(costume) do |f| %>
+<div class="new-costume" style="padding-top: 100px; display: flex; flex-direction: column, justify-content: center, width: 500px">
     <%= f.label :name %>
     <%= f.text_field :name %>
     <%= f.label :description %>
     <%= f.text_field :description %>
     <%= f.label :animal_type %>
     <%= f.text_field :animal_type %>
-    <%= f.label :longitude %>
-    <%= f.number_field :longitude, input_html: {:value => 51.50} %>
-    <%= f.label :latitude %>
-    <%= f.number_field :latitude, input_html: {:value => 0} %>
-      <%= f.label :user_id %>
+    <%= f.label :longitude, label: false, class: "d-none" %>
+    <%= f.number_field :longitude, class: "d-none", :number_field_html => { :value => 51 } %>
+    <%= f.label :latitude, class: "d-none" %>
+    <%= f.number_field :latitude, class: "d-none", :number_field_html => { :value => 0 }  %>
+    <%= f.label :user_id %>
     <%= f.number_field :user_id %>
-    <%= f.submit %>
-  <% end %>
+    <%= link_to f.submit, costumes_path %>
 </div>
+  <% end %>
