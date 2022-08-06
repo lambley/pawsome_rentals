@@ -33,6 +33,9 @@ gem "devise"
 # faker gem
 gem 'faker'
 
+# geocoding gem
+gem "geocoder"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

@@ -50,6 +50,13 @@
   i {
     font-size: 2vw;
   }
+  a {
+    text-decoration: none;
+    color: black;
+    &:hover {
+      color: rgba(0, 0, 0, 0.332);
+    }
+  }
   .login-button {
     text-decoration: none;
     font-size: small;

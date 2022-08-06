@@ -60,6 +60,11 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_02_200436) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.float "price", default: 0.0
+    t.float "latitude"
+    t.float "longitude"
+    t.string "street"
+    t.string "city"
     t.index ["user_id"], name: "index_costumes_on_user_id"
   end
 
