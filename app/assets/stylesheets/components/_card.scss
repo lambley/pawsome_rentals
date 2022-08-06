@@ -13,6 +13,11 @@
 .product-name {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+
+  p {
+    font-weight: bold;
+  }
 }
 
 .product-name-and-avatar {
