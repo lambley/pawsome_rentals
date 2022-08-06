@@ -1,9 +1,11 @@
-<div class="page-top">
+<div class="index-container">
   <h1>Costumes</h1>
-
+  <%= render 'shared/map' %>
   <div class="costumes-card-container">
     <% @costumes.each do |costume| %>
-      <%= render 'shared/card', costume: costume %>
+      <%= link_to costume_path(costume) do %>
+        <%= render 'shared/card', costume: costume %>
+      <% end %>
     <% end %>
   </div>
 </div>
