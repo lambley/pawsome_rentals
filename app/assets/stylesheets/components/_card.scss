@@ -2,15 +2,11 @@
   padding-top: 100px;
   padding-bottom: 8px;
 }
-.product-card {
-  padding: 4px 4px;
-}
 
 .costumes-card-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  order: 4;
-  margin: 16px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
   padding: 0 8px;
 }
 
@@ -22,4 +18,11 @@
 .product-name-and-avatar {
   display: flex;
   flex-direction: column;
+}
+
+.card-border {
+  margin: 8px 8px;
+  padding: 8px 8px;
+  border: 1px solid #90AACB;
+  border-radius: 4px;
 }
