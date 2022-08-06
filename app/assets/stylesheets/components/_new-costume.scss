@@ -1,16 +1,23 @@
 .new-costume {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+  gap: 36px;
 }
 
 .border-form {
+  margin-top: 200px;
   border: 1px solid #90AACB;
   border-radius: 8px;
   padding: 16px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 36px;
 }
 
 .new-form-container {
-  padding-top: 100px;
+  // padding-top: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;

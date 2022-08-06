@@ -1,4 +1,7 @@
 <h1>Create a New Costume</h1>
 <div class="new-costume">
-<%= render 'shared/new', costume: @costume %>
+  <div class="border-form ">
+    <%= render 'shared/photo', costume: @costume %>
+    <%= render 'shared/new', costume: @costume %>
+  </div>
 </div>
