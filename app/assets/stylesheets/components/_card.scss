@@ -23,6 +23,10 @@
 .product-name-and-avatar {
   display: flex;
   flex-direction: column;
+
+  img {
+    position: relative;
+  }
 }
 
 .card-border {
