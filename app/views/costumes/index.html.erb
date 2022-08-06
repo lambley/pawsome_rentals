@@ -1,8 +1,6 @@
-<h1 class="page-top">Costumes</h1>
 <div class="index-container">
+  <h1>Costumes</h1>
   <%= render 'shared/map' %>
-
-
   <div class="costumes-card-container">
     <% @costumes.each do |costume| %>
       <%= render 'shared/card', costume: costume %>
