@@ -17,6 +17,7 @@ puts "Seeding Costumes"
 36.times do
   longitude = rand(51.500..51.599).round(3)
   latitude = rand(-0.25..0.25).round(3)
+  address = Geocoder.search([longitude, latitude])
   Costume.create!(
     name: Faker::Company.profession,
     description: Faker::Lorem.paragraph,
@@ -24,6 +25,8 @@ puts "Seeding Costumes"
     price: rand(4.99..24.99).round(2),
     longitude:,
     latitude:,
+    street: address.first.street,
+    city: address.first.city,
     user_id: rand(1..3)
   )
 end
