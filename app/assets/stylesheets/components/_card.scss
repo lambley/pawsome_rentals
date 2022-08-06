@@ -3,11 +3,16 @@
   padding-bottom: 8px;
 }
 
+.index-container {
+  display: flex;
+}
+
 .costumes-card-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   padding: 0 8px;
+  width: 70%;
 }
 
 .product-name {
