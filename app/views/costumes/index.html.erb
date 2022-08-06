@@ -1,13 +1,9 @@
-<div class="container" style="padding-top: 100px">
+<div class="page-top">
   <h1>Costumes</h1>
-  <h2>Map</h2>
-  <%= render 'shared/map' %>
-  <div class="d-flex justify-content-evenly flex-wrap">
-    <% @costumes.each do |costume|%>
-      <p>
-      <%= link_to costume.name, costume_path(costume) %>
-        <%= costume.name%>
-      </p>
+    <%= render 'shared/map' %>
+  <div class="costumes-card-container">
+    <% @costumes.each do |costume| %>
+      <%= render 'shared/card', costume: costume %>
     <% end %>
   </div>
 </div>

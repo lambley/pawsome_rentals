@@ -1,0 +1,37 @@
+.page-top {
+  padding-top: 100px;
+  padding-bottom: 8px;
+}
+
+.costumes-card-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding: 0 8px;
+}
+
+.product-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    font-weight: bold;
+  }
+}
+
+.product-name-and-avatar {
+  display: flex;
+  flex-direction: column;
+
+  img {
+    position: relative;
+  }
+}
+
+.card-border {
+  margin: 8px 8px;
+  padding: 8px 8px;
+  border: 1px solid #90AACB;
+  border-radius: 4px;
+}
