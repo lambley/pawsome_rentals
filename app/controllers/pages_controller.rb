@@ -4,7 +4,8 @@ class PagesController < ApplicationController
 
   def contact
     @user = current_user
-
+  end
+  
   def about
   end
 end
