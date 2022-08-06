@@ -4,7 +4,8 @@ class CostumesController < ApplicationController
     @markers = @costumes.map do |c|
       {
         lat: c.latitude,
-        long: c.longitude
+        long: c.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { costume: c })
       }
     end
   end
