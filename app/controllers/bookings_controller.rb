@@ -5,9 +5,14 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @user = current_user
-    @costume = params[:costume_id]
+    @booking = current_user.bookings.new(booking_params)
+    @costume = Costume.find(params[:costume_id])
+    @booking.costume = @costume
+    if @booking.save
+      redirect_to costumes_path, status: :see_other
+    else
+      new
+    end
   end
 
   private

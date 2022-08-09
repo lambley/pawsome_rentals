@@ -3,5 +3,5 @@
   <%= f.input :date_end %>
   <%= f.association :costume %>
   <%= f.association :user %>
-  <%= f.submit %>
+  <%= f.submit 'book now', :onclick => "return confirm('booking confirmed')" %>
 <% end %>
