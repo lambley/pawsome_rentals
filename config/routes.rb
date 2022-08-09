@@ -6,9 +6,6 @@ Rails.application.routes.draw do
   resources :costumes, only: %i[index show edit update] do
     resources :bookings, only: %i[new create]
   end
-  resources :users, only: %i[show] do
-    get '/users/:id/booking/:id', to: 'users#show' #show
-    get '/users/:id/bookings', to: 'users#index' #index
-  end
+  resources :bookings, only: %i[index show create new edit update destroy]
   # costume index > costume show > costume booking new/create > user booking show/index
 end

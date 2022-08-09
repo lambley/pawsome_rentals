@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @bookings
+    @bookings = Booking.where(user: current_user)
   end
 end
 
