@@ -14,7 +14,7 @@
           <%= f.association :user %>
         </div>
         <div class="submit-button">
-          <%= f.submit %>
+          <%= f.submit 'book now', :onclick => "return confirm('booking confirmed')" %>
         </div>
       <% end %>
     </div>
