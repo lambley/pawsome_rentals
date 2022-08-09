@@ -14,9 +14,9 @@
    </div>
 
 
-    <div class="product-price">
-      <span>£<%= @costume.price %>/day</span>
-      <a href="#" class="cart-btn">Book now</a>
-    </div>
+      <div class="product-price">
+        <span>£<%= @costume.price %>/day</span>
+          <%= link_to "Book now", new_costume_booking_path, class: "cart-btn", user: current_user %>
+      </div>
   </div>
 </main>
