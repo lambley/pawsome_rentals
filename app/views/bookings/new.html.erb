@@ -1,7 +1,21 @@
-<%= simple_form_for [@costume, @booking] do |f| %>
-  <%= f.input :date_start %>
-  <%= f.input :date_end %>
-  <%= f.association :costume %>
-  <%= f.association :user %>
-  <%= f.submit %>
-<% end %>
+<div class="flex-container">
+  <div class= "new-booking-page", style="padding-top: 100px">
+      <%= simple_form_for [@costume, @booking] do |f| %>
+        <div>
+          <%= f.input :date_start %>
+        </div>
+        <div>
+          <%= f.input :date_end %>
+        </div>
+        <div>
+          <%= f.association :costume %>
+        </div>
+        <div>
+          <%= f.association :user %>
+        </div>
+        <div class="submit-button">
+          <%= f.submit %>
+        </div>
+      <% end %>
+    </div>
+</div>
