@@ -28,7 +28,7 @@ puts "Seeding Costumes"
     name: Faker::Company.profession,
     description: Faker::Lorem.paragraph,
     animal_type: %w[dog cat].sample,
-    price: rand(4.99..24.99).round(2),
+    price: rand(4.99..24.99).round - 0.01,
     longitude:,
     latitude:,
     street: address.first.street,
