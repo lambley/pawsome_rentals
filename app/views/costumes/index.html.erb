@@ -3,7 +3,7 @@
   <%= render 'shared/map' %>
   <div class="costumes-card-container">
     <% @costumes.each do |costume| %>
-      <%= link_to costume_path(costume) do %>
+      <%= link_to costume_path(costume), class: "card-link-no-deco" do %>
         <%= render 'shared/card', costume: costume %>
       <% end %>
     <% end %>
