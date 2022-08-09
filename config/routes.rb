@@ -3,7 +3,12 @@ Rails.application.routes.draw do
   get "/contact-us", to: "pages#contact"
   get '/about', to: "pages#about"
   devise_for :users
-  resources :bookings, only: [:create]
-  resources :costumes, only: %i[index show edit update]
-  resources :users, only: %i[show]
+  resources :costumes, only: %i[index show edit update] do
+    resources :bookings, only: %i[new create]
+  end
+  resources :users, only: %i[show] do
+    get '/users/:id/booking/:id', to: 'users#show' #show
+    get '/users/:id/bookings', to: 'users#index' #index
+  end
+  # costume index > costume show > costume booking new/create > user booking show/index
 end
