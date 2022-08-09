@@ -1,6 +1,8 @@
 .flex-container {
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 450px;
 }
 
 
@@ -15,4 +17,10 @@
   transition: all .5s;
   border-style: none;
   width: 100%;
+}
+
+.h2 {
+  text-align: center;
+  padding: 32px;
+  font-size: medium;
 }

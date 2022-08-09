@@ -1,5 +1,8 @@
-<div class="flex-container">
-  <div class="new-booking-page", style="padding-top: 100px">
+<div class="new-booking-page", style="padding-top: 100px">
+  <div class="h2">
+    <h2>Your pawesome costume <u><strong><%= @costume.name %></strong></u> is about to be booked!</h2>
+  </div>
+    <div class="flex-container">
       <%= simple_form_for [@costume, @booking] do |f| %>
         <div>
           <%= f.input :date_start %>
