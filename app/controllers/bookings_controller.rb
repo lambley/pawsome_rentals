@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def new
     @booking = Booking.new
+    @costume = Costume.find(params[:costume_id])
   end
 
   def create
