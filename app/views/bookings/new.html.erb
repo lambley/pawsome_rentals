@@ -1,5 +1,5 @@
 <div class="flex-container">
-  <div class= "new-booking-page", style="padding-top: 100px">
+  <div class="new-booking-page", style="padding-top: 100px">
       <%= simple_form_for [@costume, @booking] do |f| %>
         <div>
           <%= f.input :date_start %>
@@ -13,8 +13,8 @@
         <div>
           <%= f.association :user %>
         </div>
-        <div class="submit-button">
-          <%= f.submit 'book now', :onclick => "return confirm('booking confirmed')" %>
+        <div>
+          <%= f.submit 'book now', :onclick => "return confirm('booking confirmed')", :class => "submit-button" %>
         </div>
       <% end %>
     </div>
