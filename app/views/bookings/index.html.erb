@@ -1,4 +1,4 @@
 <h1>All bookings</h1>
 <% @bookings.each do |booking| %>
-  <%= booking.created_at %>
+  <%= link_to booking.costume_id, booking_path(booking) %>
 <% end %>

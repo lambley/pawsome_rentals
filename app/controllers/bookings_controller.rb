@@ -5,7 +5,6 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
-    @costume = @booking.costume
   end
 
   def index
