@@ -28,6 +28,10 @@
 
   p {
     font-weight: bold;
+    color: black;
+    &:hover {
+      color: rgba(0, 0, 0, 0.332);
+    }
   }
 }
 
@@ -46,4 +50,8 @@
   padding: 8px 8px;
   border: 1px solid #90AACB;
   border-radius: 4px;
+}
+
+.card-link-no-deco {
+  text-decoration: none;
 }
