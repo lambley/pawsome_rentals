@@ -1,12 +1,28 @@
-.page-top {
-  padding-bottom: 8px;
+.index-top {
+  display: flex;
+  position: fixed;
+  top: 110px;
+  width: 35%;
+  .index-top-filters {
+    display: flex;
+    img {
+      height: 50px;
+      width: 50px;
+    }
+    a {
+      text-decoration: none;
+      padding: 8px 24px;
+    }
+  }
+}
+
+#dog-filter, #cat-filter {
+  display: flex;
 }
 
 .index-container {
   display: flex;
-  h1 {
-    text-align: center;
-  }
+  padding-top: 80px;
 }
 
 .costumes-card-container {
