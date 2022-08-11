@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users, only: %i[show]
   resources :costumes, only: %i[index show edit update new create] do
-    resources :bookings, only: %i[new create]
+    resources :bookings, only: %i[new create index show edit update destroy]
   end
-  resources :users, only: %i[show]d
+  resources :users, only: %i[show]
 end
