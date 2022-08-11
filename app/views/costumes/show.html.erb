@@ -8,15 +8,18 @@
       <h1><%= @costume.name%></h1>
       <h2><%= @costume.animal_type %></h2>
       <p><%= @costume.description%></p>
-      <div class="edit-button">
-        <%# <%= link_to "edit", edit_costume_path(@costume)%>
+      <div class="edit-button">       
       </div>
    </div>
 
 
       <div class="product-price">
         <span>£<%= @costume.price %>/day</span>
-        <%= link_to "Book now", new_costume_booking_path(@costume), class: "cart-btn", user: current_user %>
+          <% if user_signed_in? %>
+           <%= link_to "Book now", new_costume_booking_path(@costume), class: "cart-btn", user: current_user %>
+          <% else %>
+            <%= link_to "Login to Book", new_user_session_path, class: "cart-btn" %>
+          <% end %>
       </div>
   </div>
 </main>

@@ -18,6 +18,14 @@ class Costume < ApplicationRecord
   after_validation :geocode
   # after_validation :reverse_geocode
 
+  # PG search
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_animal_type,
+  against: [ :name, :animal_type ],
+  using: {
+    tsearch: { prefix: true }
+  }
+
   def address
     [street, city].compact.join(", ")
   end

@@ -18,8 +18,10 @@
 
   <body>
     <%= render 'shared/navbar' %>
-    <p class="notice text-info"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div style="padding-top: 100px;">
+      <p class="notice text-info"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
   </body>
 </html>

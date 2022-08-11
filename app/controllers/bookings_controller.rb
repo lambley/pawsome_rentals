@@ -7,13 +7,13 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = current_user.bookings.new(booking_params)
-    @costume = Costume.find(params[:costume_id])
-    @booking.costume = @costume
+    @booking = Booking.new(booking_params)
+    @booking.costume = Costume.find(params[:costume_id])
+    @booking.user = current_user
     if @booking.save
-      redirect_to costumes_path, status: :see_other
+      redirect_to user_path(current_user), status: :see_other
     else
-      new
+      redirect_to new_costume_booking_path, status: :unprocessable_entity
     end
   end
 
@@ -37,7 +37,7 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to costumes_path
   end
-  
+
   private
 
   def find_booking
@@ -45,7 +45,6 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date_start, :date_end, :user_id, :costume_id)
+    params.require(:booking).permit(:date_start, :date_end)
   end
-  
 end
