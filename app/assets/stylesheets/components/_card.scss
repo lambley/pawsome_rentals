@@ -1,12 +1,10 @@
 .page-top {
-  padding-top: 100px;
   padding-bottom: 8px;
 }
 
 .index-container {
   display: flex;
   h1 {
-    padding-top: 100px;
     text-align: center;
   }
 }
@@ -15,7 +13,6 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
-  padding: 100px;
   width: 70%;
   transform: translate(430px, 10px);
   position: absolute;
