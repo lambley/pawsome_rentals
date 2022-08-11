@@ -2,9 +2,9 @@ require 'faker'
 require 'open-uri'
 
 puts "resetting database"
+Booking.destroy_all
 User.destroy_all
 Costume.destroy_all
-
 
 puts "Seeding Users"
 12.times do
@@ -33,7 +33,7 @@ puts "Seeding Costumes"
     latitude:,
     street: address.first.street,
     city: address.first.city,
-    user_id: rand(1..3)
+    user_id: 1
   )
   c.photo.attach(io: URI.open('https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1659642713/l2xononnlbfimakzuo7i.jpg'), filename: 'image.jpg')
 end
