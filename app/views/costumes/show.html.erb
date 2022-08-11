@@ -18,7 +18,7 @@
           <% if user_signed_in? %>
            <%= link_to "Book now", new_costume_booking_path(@costume), class: "cart-btn", user: current_user %>
           <% else %>
-            <%= link_to "Login to Book", new_user_session_path, class: "cart-btn" %>
+            <%= link_to "Login to Book", new_user_session_path, class: "cart-btn-login" %>
           <% end %>
       </div>
   </div>
