@@ -90,3 +90,6 @@ gem "dotenv-rails", groups: [:development, :test]
 
 # cloudinary gem
 gem "cloudinary"
+
+# For the contact form
+gem 'mail_form'
