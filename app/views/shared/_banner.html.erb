@@ -1,9 +1,14 @@
 <div class="banner">
   <div class="container">
     <h1>Awesome costumes to rent for your pawtastic friend</h1>
-    <div class="mock-search">
-      <p class="mock-input">find pawsome costumes near you</p>
-      <a class="button" href="#">search</a>
-    </div>
+    <%= form_tag costumes_path, method: :get, class: "mock-search" do %>
+    <%=
+      text_field_tag :query,
+      params[:query],
+      class: "mock-input",
+      placeholder: "Find pawsome costumes near you"
+    %>
+    <%= submit_tag "Search", class: "search-button" %>
+  <% end %>
   </div>
 </div>
