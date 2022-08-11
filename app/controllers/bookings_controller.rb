@@ -17,7 +17,7 @@ end
 private
 
 def booking_params
-  params.require(:booking).permit(:date_start, :date_end, :value, :status)
+  params.require(:booking).permit(:date_start, :user_id, :costume_id, :date_end, :value, :status)
 end
 
 def find_booking
