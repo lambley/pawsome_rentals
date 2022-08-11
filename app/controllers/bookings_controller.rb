@@ -7,14 +7,11 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @costume = Costume.find(params[:costume_id])
-    @booking = Booking.new
-    @booking.costume = @costume
+    @booking = Booking.new(booking_params)
+    @booking.costume = Costume.find(params[:costume_id])
     @booking.user = current_user
-    if @booking.save
-      redirect_to costumes_path, status: :see_other
-    else
-      new
+    if @booking.save!
+      redirect_to user_path(current_user), status: :see_other
     end
   end
 
@@ -46,7 +43,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:date_start, :date_end, :user_id, :costume_id, :status)
+    params.require(:booking).permit(:date_start, :date_end)
   end
 
 end
