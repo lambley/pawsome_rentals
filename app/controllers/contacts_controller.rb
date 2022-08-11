@@ -3,8 +3,12 @@ class ContactsController < ApplicationController
     @contact = Contact.new
   end
 
+  def contact_params
+    params.require(:contact).permit(:name, :email, :message, :captcha)
+  end
+
   def create
-    @contact = Contact.new(params[:contact])
+    @contact = Contact.new(contact_params)
     @contact.request = request
     if @contact.deliver
       flash.now[:success] = "Thanks for your message! We'll get back to you as soon as pawsible!"
