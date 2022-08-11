@@ -7,9 +7,9 @@
 
     <div class="product-name-and-avatar">
       <% if costume.animal_type == "dog" %>
-        <%= image_tag("dog") %>
+        <%= cl_image_tag("dog_dvkm1h") %>
       <% else %>
-        <%= image_tag("cat") %>
+        <%= cl_image_tag("cat_qmzdnd") %>
       <% end %>
       <p>£<%= costume.price %>/day</p>
     </div>
