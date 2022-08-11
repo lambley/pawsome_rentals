@@ -2,23 +2,29 @@
   <div class="h2">
     <h2>Your pawesome costume <strong id='booking-costume-name'><%= @costume.name %></strong> is about to be booked!</h2>
   </div>
-    <div class="flex-container">
-      <%= simple_form_for [@costume, @booking] do |f| %>
-        <div>
-          <%= f.input :date_start %>
-        </div>
-        <div>
-          <%= f.input :date_end %>
-        </div>
-        <div>
-          <%= f.association :costume %>
-        </div>
-        <div>
-          <%= f.association :user %>
-        </div>
-        <div>
-          <%= f.submit 'book now', :onclick => "return confirm('booking confirmed')", :class => "submit-button" %>
-        </div>
-      <% end %>
+    <div class='flex-container'>
+      <div class='booking-img'>
+        <%= cl_image_tag("l2xononnlbfimakzuo7i",
+        width: 750, height: 450) %>
+      </div>
+      <div class="booking-form">
+        <%= simple_form_for [@costume, @booking] do |f| %>
+          <div>
+            <%= f.input :date_start %></br>
+          </div>
+          <div>
+            <%= f.input :date_end %></br>
+          </div>
+          <div>
+            <%= f.association :costume %></br>
+          </div>
+          <%# <div> %>
+            <%# <%= f.association :user %>
+          <%# </div> %>
+          <div>
+            <%= f.submit 'Book Now', :onclick => "return confirm('booking confirmed')", :class => "submit-button" %>
+          </div>
+        <% end %>
+      </div>
     </div>
 </div>
