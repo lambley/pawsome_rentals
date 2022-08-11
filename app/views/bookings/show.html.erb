@@ -1,1 +1,13 @@
 <h1 style="padding-top: 100px">Details about the booking</h1>
+
+<%= cl_image_tag @booking.costume.photo.key if @booking.costume.photo.attached? %>
+
+<h2><%= @booking.costume.name %></h2>
+<p> <%= @booking.date_start.strftime("%m/%d") %> </p>
+<p> <%= @booking.date_end.strftime("%m/%d") %> </p>
+
+<%= link_to "Delete this booking",
+            costume_booking_path(@booking),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+<%= link_to "Edit this booking", costume_booking_path(@booking)%>

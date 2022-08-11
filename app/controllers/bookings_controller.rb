@@ -12,6 +12,19 @@ class BookingsController < ApplicationController
   def index
     @bookings = Booking.where(user: current_user)
   end
+
+  def edit
+  end
+
+  def update
+    @booking.update(booking_params)
+    redirect_to costume_booking_path(@booking)
+  end
+
+  def destroy
+    @booking.destroy
+    redirect_to costumes_path
+  end
 end
 
 private
