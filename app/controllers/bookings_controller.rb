@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     @costume = Costume.find(params[:costume_id])
     @booking.costume = @costume
     if @booking.save
-      redirect_to costumes_path, status: :see_other
+      redirect_to user_path(current_user), status: :see_other
     else
       new
     end
@@ -37,7 +37,7 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to costumes_path
   end
-  
+
   private
 
   def find_booking
@@ -47,5 +47,5 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:date_start, :date_end, :user_id, :costume_id)
   end
-  
+
 end
