@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :costumes, only: %i[index show edit update]
   resources :users, only: %i[show]
-  resources :contacts, only: %i[new create show]
+  resources :contacts, only: %i[new create]
 end

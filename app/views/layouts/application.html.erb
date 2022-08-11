@@ -20,6 +20,11 @@
     <%= render 'shared/navbar' %>
     <p class="notice text-info"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <div class="container">
+      <% flash.each do |key, message| %>
+        <p class="alert alert-<%= key %>"><%= message %></p>
+      <% end %>
+    </div>
     <%= yield %>
   </body>
 </html>
