@@ -5,7 +5,6 @@ class CostumesController < ApplicationController
     else
       @costumes = Costume.all
     end
-
     @markers = @costumes.map do |c|
       {
         lat: c.latitude,
