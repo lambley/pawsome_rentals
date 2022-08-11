@@ -1,16 +1,23 @@
 class BookingsController < ApplicationController
-  def create
+  def new
     @booking = Booking.new
+    @costume = Costume.find(params[:costume_id])
   end
 
-  def show
-    @booking = Booking.find(params[:id])
-    @costume = @booking.costume
+  def create
+    @booking = current_user.bookings.new(booking_params)
+    @costume = Costume.find(params[:costume_id])
+    @booking.costume = @costume
+    if @booking.save
+      redirect_to costumes_path, status: :see_other
+    else
+      new
+    end
   end
-end
 
-private
+  private
 
-def booking_params
-  params.require(:booking).permit(:date_start, :date_end, :value, :status)
+  def booking_params
+    params.require(:booking).permit(:date_start, :date_end, :user_id, :costume_id)
+  end
 end
