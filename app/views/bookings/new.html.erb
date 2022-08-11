@@ -1,0 +1,24 @@
+<div class="new-booking-page", style="padding-top: 100px">
+  <div class="h2">
+    <h2>Your pawesome costume <u><strong><%= @costume.name %></strong></u> is about to be booked!</h2>
+  </div>
+    <div class="flex-container">
+      <%= simple_form_for [@costume, @booking] do |f| %>
+        <div>
+          <%= f.input :date_start %>
+        </div>
+        <div>
+          <%= f.input :date_end %>
+        </div>
+        <div>
+          <%= f.association :costume %>
+        </div>
+        <div>
+          <%= f.association :user %>
+        </div>
+        <div>
+          <%= f.submit 'book now', :onclick => "return confirm('booking confirmed')", :class => "submit-button" %>
+        </div>
+      <% end %>
+    </div>
+</div>

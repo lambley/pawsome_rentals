@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :costumes, only: %i[index show edit update] do
     resources :bookings, only: %i[new create index show edit update destroy]
   end
+  resources :users, only: %i[show]
   # costume index > costume show > costume booking new/create > user booking show/index
 end
