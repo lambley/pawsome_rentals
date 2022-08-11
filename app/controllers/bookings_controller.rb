@@ -12,6 +12,8 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     if @booking.save!
       redirect_to user_path(current_user), status: :see_other
+    else
+      redirect_to new_costume_booking_path, status: :unprocessable_entity
     end
   end
 
