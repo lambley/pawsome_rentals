@@ -4,11 +4,7 @@ Rails.application.routes.draw do
   get '/about', to: "pages#about"
   devise_for :users
   resources :costumes, only: %i[index show edit update] do
-    resources :bookings, only: %i[new create]
-  end
-  resources :users, only: %i[show] do
-    get '/users/:id/booking/:id', to: 'users#show' #show
-    get '/users/:id/bookings', to: 'users#index' #index
+    resources :bookings, only: %i[new create index show]
   end
   # costume index > costume show > costume booking new/create > user booking show/index
 end
