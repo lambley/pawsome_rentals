@@ -1,6 +1,11 @@
 class CostumesController < ApplicationController
   def index
-    @costumes = Costume.all
+    if params[:query].present?
+      @costumes = Costume.search_by_name_and_animal_type(params[:query])
+    else
+      @costumes = Costume.all
+    end
+
     @markers = @costumes.map do |c|
       {
         lat: c.latitude,
