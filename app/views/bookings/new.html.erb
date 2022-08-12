@@ -3,9 +3,8 @@
     <h2>Your pawesome costume <strong id='booking-costume-name'><%= @costume.name %></strong> is about to be booked!</h2>
   </div>
     <div class='flex-container'>
-      <div class='booking-img'>
-        <%= cl_image_tag("l2xononnlbfimakzuo7i",
-        width: 750, height: 450) %>
+      <div id='booking-img'>
+        <%= cl_image_tag("l2xononnlbfimakzuo7i", width: 750, height: 450) %>
       </div>
       <div class="booking-form">
         <%= simple_form_for [@costume, @booking] do |f| %>
