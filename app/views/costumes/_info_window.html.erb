@@ -2,7 +2,7 @@
   <% if costume.photo.attached? %>
     <%= cl_image_tag costume.photo.key, width: 80, height: 80 %>
   <% else %>
-    <%= [image_tag("https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1660254929/justin-jason-NZlbve4F1xk-unsplash_exnsiv.jpg"), image_tag("https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1660254926/karsten-winegeart-ewfHXBcuFA0-unsplash_cffclz.jpg"), image_tag("https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1660254926/kerwin-elias-7-ToFEHzMNw-unsplash_ffseqw.jpg"), image_tag("https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1660254926/karsten-winegeart--_gMskl-uoc-unsplash_ldomqk.jpg"), width: 80, height: 80].sample %>
+    <%= [image_tag("https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/c_thumb,w_200,g_face/v1660254929/justin-jason-NZlbve4F1xk-unsplash_exnsiv.jpg"), image_tag("https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/c_thumb,w_200,g_face/v1660254926/karsten-winegeart-ewfHXBcuFA0-unsplash_cffclz.jpg"), image_tag("https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/c_thumb,w_200,g_face/v1660254926/kerwin-elias-7-ToFEHzMNw-unsplash_ffseqw.jpg"), image_tag("https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/c_thumb,w_200,g_face/v1660254926/karsten-winegeart--_gMskl-uoc-unsplash_ldomqk.jpg"), width: 80, height: 80 ].sample %>
   <% end %>
   </div>
 <h2><%= link_to costume.name, costume_path(costume)%></h2>
