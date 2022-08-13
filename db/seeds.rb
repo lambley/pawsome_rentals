@@ -20,6 +20,21 @@ puts "> Generated #{User.count} users"
 
 puts "Seeding Costumes"
 
+photo_array = [
+  'https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1660399641/download_m6vfgc.jpg',
+  'https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1660399641/images_gm8vb4.jpg',
+  'https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1660399641/1658782280-3344685-center-3_kdm7o2.jpg',
+  'https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1660399641/1656456160-halloween-2-michael-myers-dog-costume_mqwqls.jpg',
+  'https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1660399640/02_Cat_Halloween_Costumes-Beetlejuice_Inline_jq0mlq.jpg',
+  'https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1660399641/image_vx11lq.webp',
+  'https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1660399640/2_wbsi7l.jpg',
+  'https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1660399641/madonna-dog-costume_tng8r5.jpg',
+  'https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1660399641/cat-halloween-costume-mermaid_zfaeyl.jpg',
+  'https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1660399641/images-1_ezgchx.webp',
+  'https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1660399641/1657567974-580413_PS_PAW_BILL_SUIT-scaled_jgpr3u.jpg',
+  'https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1660399641/81PCVE1OhHL._AC_SL1500__ham1kr.jpg'
+]
+
 36.times do
   longitude = rand(51.500..51.599).round(3)
   latitude = rand(-0.25..0.25).round(3)
@@ -35,8 +50,40 @@ puts "Seeding Costumes"
     city: address.first.city,
     user_id: 1
   )
-  c.photo.attach(io: URI.open('https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1660254926/karsten-winegeart-ewfHXBcuFA0-unsplash_cffclz.jpg'), filename: 'image.jpg')
+  c.photo.attach(io: URI.open(photo_array.sample), filename: 'image.jpg')
 end
+
+  longitude = rand(51.500..51.599).round(3)
+  latitude = rand(-0.25..0.25).round(3)
+  address = Geocoder.search([longitude, latitude])
+  c = Costume.create!(
+    name: "Wizard",
+    description: Faker::Lorem.paragraph,
+    animal_type: %w[dog cat].sample,
+    price: rand(4.99..24.99).round - 0.01,
+    longitude:,
+    latitude:,
+    street: address.first.street,
+    city: address.first.city,
+    user_id: 1
+  )
+  c.photo.attach(io: URI.open(photo_array.sample), filename: 'image.jpg')
+
+  longitude = rand(51.500..51.599).round(3)
+  latitude = rand(-0.25..0.25).round(3)
+  address = Geocoder.search([longitude, latitude])
+  c = Costume.create!(
+    name: "Wizard",
+    description: Faker::Lorem.paragraph,
+    animal_type: "dog",
+    price: rand(4.99..24.99).round - 0.01,
+    longitude:,
+    latitude:,
+    street: address.first.street,
+    city: address.first.city,
+    user_id: 1
+  )
+  c.photo.attach(io: URI.open(photo_array.sample), filename: 'image.jpg')
 
 puts "> Generated #{Costume.count} costumes"
 
