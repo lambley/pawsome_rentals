@@ -17,7 +17,7 @@
       <% else %>
         <%= cl_image_tag("cat_agtttv") %>
       <% end %>
-      <p>£<%= booking.costume.price * booking.number_of_days %></p>
+      <p>£<%= (booking.costume.price * booking.number_of_days).round(2) %></p>
     </div>
   </div>
 </div>
