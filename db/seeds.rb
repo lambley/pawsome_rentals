@@ -35,7 +35,7 @@ puts "Seeding Costumes"
     city: address.first.city,
     user_id: 1
   )
-  c.photo.attach(io: URI.open('https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1659642713/l2xononnlbfimakzuo7i.jpg'), filename: 'image.jpg')
+  c.photo.attach(io: URI.open('https://res.cloudinary.com/le-wagon-london-campus-batch-904/image/upload/v1660254926/karsten-winegeart-ewfHXBcuFA0-unsplash_cffclz.jpg'), filename: 'image.jpg')
 end
 
 puts "> Generated #{Costume.count} costumes"
