@@ -79,6 +79,17 @@
   background-color:#889fbd;
 }
 
+.cart-btn-login {
+  display: inline-block;
+  background-color: #F9D5A7 ;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #000000;
+  text-decoration: none;
+  padding: 12px 30px;
+  transition: all .5s;
+}
+
 /* Responsive */
 @media (max-width: 940px) {
   .card-product {
