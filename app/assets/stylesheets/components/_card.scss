@@ -76,9 +76,22 @@
   text-decoration: none;
 }
 
-.booking-page-product-card{
+.booking-page-product-card {
   display: flex;
   flex-direction: column;
   padding: 15px;
 }
 
+.booking-product-name-and-avatar {
+  display: flex;
+  flex-direction: column;
+
+  img {
+    position: relative;
+    z-index: 1;
+    top: -65px;
+    left: -22px;
+    width: 50px;
+    height: 50px;
+  }
+}

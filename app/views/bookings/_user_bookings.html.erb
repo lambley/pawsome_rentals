@@ -1,17 +1,17 @@
 <div class="card-border">
   <div class="card-image">
-    <%= cl_image_tag booking.costume.photo.key, width: 80, height: 80 %>
+    <%= cl_image_tag booking.costume.photo.key, width: 300, height: 200 %>
   </div>
 
   <div class="product-name">
     <div class="booking-page-product-card">
-      <p><%= booking.costume.name %></p>
-      <p>Number of days:  <%= pluralize booking.number_of_days.to_i, "day" %></p>
+      <p><u><%= booking.costume.name.capitalize %></u></p>
+      <p>Days:  <%= pluralize booking.number_of_days.to_i, "day" %></p>
       <p>Start: <%= booking.date_start.to_s %></p>
       <p>End: <%= booking.date_end.to_s %></p>
     </div>
 
-  <div class="product-name-and-avatar">
+  <div class="booking-product-name-and-avatar">
       <% if booking.costume.animal_type == "dog" %>
         <%= cl_image_tag("dog_j8xmmc") %>
       <% else %>
