@@ -1,5 +1,18 @@
-<%= cl_image_tag booking.costume.photo.key, width: 80, height: 80 %>
-<% number_of_days = booking.date_end - booking.date_start %>
-<p><%= pluralize number_of_days.to_i, "day" %></p>
-<p><%= booking.date_start.to_s %></p>
-<p><%= booking.date_end.to_s %></p>
+<div class="card-border">
+  <%= cl_image_tag booking.costume.photo.key, width: 80, height: 80 %>
+
+  <div class="product-name">
+    <p>Number of days:<%= pluralize booking.number_of_days.to_i, "day" %></p>
+    <p>Start: <%= booking.date_start.to_s %></p>
+    <p>End: <%= booking.date_end.to_s %></p>
+
+    <div class="product-name-and-avatar">
+      <% if booking.costume.animal_type == "dog" %>
+        <%= cl_image_tag("dog_dvkm1h") %>
+      <% else %>
+        <%= cl_image_tag("cat_qmzdnd") %>
+      <% end %>
+      <p>£<%= booking.costume.price %>/day</p>
+    </div>
+  </div>
+</div>
