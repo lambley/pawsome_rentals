@@ -2,19 +2,10 @@
   <h1>Hi, <%= @user.first_name.capitalize %></h1>
   <h4>Your Rentals</h4>
   <div class="cards">
-  <div class="row">
-    <div class="col-sm card border ps-3 pe-3 ms-3 me-3">
-      <img src="https://placehold.co/600x400" alt="" class="card-img-top">
-      <p>Rental Card Here</p>
-    </div>
-    <div class="col-sm card border ps-3 pe-3 ms-3 me-3">
-      <img src="https://placehold.co/600x400" alt="" class="card-img-top">
-      <p>Rental Card Here</p>
-    </div>
-    <div class="col-sm card border ps-3 pe-3 ms-3 me-3">
-      <img src="https://placehold.co/600x400" alt="" class="card-img-top">
-      <p>Rental Card Here</p>
-    </div>
+    <% @bookings.each do |booking| %>
+      <%= link_to costume_path(booking.costume_id), class: "card-link-no-deco" do %>
+        <%= render "bookings/user_bookings", booking: booking %>
+      <% end %>
+    <% end %>
   </div>
-</div>
 </div>
