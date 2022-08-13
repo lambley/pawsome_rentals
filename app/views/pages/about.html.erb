@@ -2,7 +2,13 @@
   <span>
     <h1>About Us</h1>
     <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita dignissimos ratione ab eos fugit quia accusantium nostrum earum voluptatem placeat maxime nemo, voluptatum, incidunt rem, quaerat obcaecati dolorem ipsam deserunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores totam facilis temporibus iste culpa aut dolor veniam vero quidem incidunt, itaque quo accusantium facere ipsa at sed cupiditate expedita qui!
+      Pawsome rentals values enabling pet owners to find costumes for their four-legged friends, locally.
+    </p>
+    <p>
+      Costumes ranging from <%= link_to @three_costumes[0].name, costume_path(@three_costumes[0]) %> to <%= link_to @three_costumes[1].name, costume_path(@three_costumes[1]) %>, or even <%= link_to @three_costumes[2].name, costume_path(@three_costumes[2]) %>.
+    </p>
+    <p>
+      There's something for everyone and their four-legged friend 🐾
     </p>
   </span>
   <div class="">

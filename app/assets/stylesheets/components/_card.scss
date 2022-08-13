@@ -5,6 +5,8 @@
   width: 35%;
   .index-top-filters {
     display: flex;
+    left: 267px;
+    position: absolute;
     img {
       height: 50px;
       width: 50px;
@@ -73,3 +75,10 @@
 .card-link-no-deco {
   text-decoration: none;
 }
+
+.booking-page-product-card{
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
