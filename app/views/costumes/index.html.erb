@@ -1,10 +1,14 @@
 <div class="index-top">
   <h1 class="col">Costumes</h1>
   <div class="index-top-filters">
-    <div id="cat-filter">
-      <%= link_to costumes_path(query: "cat"), class: "col" do%>
+    <div id="dog-filter">
+      <%= link_to costumes_path(query: "dog"), class: "col" do%>
         <%= cl_image_tag("dog_j8xmmc") %>
         <p>Dogs Only</p>
+      <% end %>
+    </div>
+    <div id="cat-filter">
+      <%= link_to costumes_path(query: "cat"), class: "col" do%>
         <%= cl_image_tag("cat_agtttv") %>
         <p>Cats Only</p>
       <% end %>
